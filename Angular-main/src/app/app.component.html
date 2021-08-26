@@ -1,0 +1,26 @@
+<!-- // 1 Learn about conditional rendering using *ngIf, ng-template. -->
+<!-- 
+<button (click)="show = !show">{{ show ? "hide" : "show" }}</button>
+show = {{ show }}
+<br />
+<div *ngIf="show; else elseBlock">Text to show</div>
+<ng-template #elseBlock
+  >Alternate text while primary text is hidden</ng-template -->
+
+<!-- 2- Learn about style binding [style], [ngStyle]. -->
+<!-- 
+<p [ngStyle]="{ 'background-color': show ? 'red' : 'green' }">aaa</p>
+<div class="div" [style]="{ color: 'red' }">gi all</div>
+<div class="div" [ngStyle]="{ color: 'red' }">gi all</div> -->
+
+<!-- 3- Learn about class binding [class], [ngClass]. -->
+
+<!-- <some-element [ngClass]="{'first': true, 'second': true, 'third': false}">...</some-element> -->
+
+<!-- 4- Learn about Routing, adding routes in app-routing.module.ts, routerLink and router-outlet. -->
+
+<!-- <app-home></app-home> -->
+
+<app-contac></app-contac>
+
+<router-outlet></router-outlet>

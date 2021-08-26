@@ -1,0 +1,38 @@
+<h1>To Do List</h1>
+
+<h2>If the color shown red try to add another todo</h2>
+
+<input type="text" [(ngModel)]="alltodoist" />
+<button (click)="addTodo()">add</button>
+<button (click)="show = !show">{{ show ? "hide" : "show" }}</button>
+<button (click)="changecolor()">Change color</button>
+
+<!-- <div *ngIf="show; else elseBlock"></div> -->
+<div *ngIf="show; else elseBlock">
+  <ul
+    [ngClass]="{ first: first, second: second }"
+    *ngFor="let todo of arrayToDo; let i = index"
+  >
+    <div class="spannn">{{ i + 1 }} . {{ todo }}</div>
+    <br />
+    <button (click)="deleteToDo(todo)">delete</button>
+    <span *ngIf="ShowUpdateInput; else elseBlock">
+      <button (click)="updateToDo(todo)">update One</button>
+    </span>
+    <ng-template #elseBlock
+      ><span>
+        <input [(ngModel)]="updateOne" />
+        <button (click)="updateOneFun(todo)">update</button>
+        <button (click)="cancelFun()">cancel</button>
+      </span>
+    </ng-template>
+  </ul>
+  <P>{{ message ? "Please add another to do" : "" }}</P>
+</div>
+<ng-template #elseBlock> Click To Show</ng-template>
+
+<!-- <a routerLink="/HomePage">click to Change url to home and repete component</a> -->
+
+<!-- <a [routerLink]="['/HomePage']">Contact</a> -->
+
+<!-- <router-outlet></router-outlet> -->
